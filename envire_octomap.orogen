@@ -8,11 +8,11 @@ import_types_from 'base'
 # define opaques
 typekit do
     opaque_autogen '/boost/shared_ptr< /octomap/AbstractOcTree >',
-                    :includes => "envire_types/OcTree.hpp",
+                    :includes => "envire_octomap/OcTree.hpp",
                     :type => :boost_serialization
 
     opaque_autogen '/envire/type/OcTree',
-                    :includes => "envire_types/OcTree.hpp",
+                    :includes => "envire_octomap/OcTree.hpp",
                     :type => :envire_serialization,
                     :embedded_type => "/boost/shared_ptr< /octomap/AbstractOcTree >"
 end
