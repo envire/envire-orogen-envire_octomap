@@ -4,22 +4,19 @@ version "0.1"
 using_library 'envire_octomap'
 
 import_types_from 'base'
+import_types_from 'envire_core'
 
 # define opaques
 typekit do
     opaque_autogen '/boost/shared_ptr< /octomap/AbstractOcTree >',
                     :includes => "envire_octomap/OcTree.hpp",
                     :type => :boost_serialization
-
-    opaque_autogen '/envire/octomap/OcTree',
-                    :includes => "envire_octomap/OcTree.hpp",
-                    :type => :envire_serialization,
-                    :embedded_type => "/boost/shared_ptr< /octomap/AbstractOcTree >"
 end
 
 
 # type exports
 typekit do
+    envire_octree = spatio_temporal '/boost/shared_ptr< /octomap/AbstractOcTree >'
     export_types '/boost/shared_ptr< /octomap/AbstractOcTree >',
-                 '/envire/octomap/OcTree'
+                 envire_octree
 end
