@@ -8,15 +8,16 @@ import_types_from 'envire_core'
 
 # define opaques
 typekit do
-    opaque_autogen '/boost/shared_ptr< /octomap/AbstractOcTree >',
+    opaque_autogen '/boost/shared_ptr</octomap/AbstractOcTree>',
                     :includes => "envire_octomap/OcTree.hpp",
-                    :type => :boost_serialization
+                    :type => :boost_serialization,
+                    :alias_name => '/octomap/AbstractOcTreePtr'
 end
 
 
 # type exports
 typekit do
-    envire_octree = spatio_temporal '/boost/shared_ptr< /octomap/AbstractOcTree >'
-    export_types '/boost/shared_ptr< /octomap/AbstractOcTree >',
+    envire_octree = spatio_temporal '/boost/shared_ptr</octomap/AbstractOcTree>'
+    export_types '/boost/shared_ptr</octomap/AbstractOcTree>',
                  envire_octree
 end
